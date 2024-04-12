@@ -22,7 +22,7 @@ export class ReportViewerComponent {
                 info.validationRules = info.validationRules || [];
                 info.validationRules.push(
                     { type: 'email', message: 'Email parameter value has invalid format.' });
-                info.editor = { header: "custom-parameter-text-editor" };
+                info.editor.header = "custom-parameter-text-editor";
         }
     }
 
