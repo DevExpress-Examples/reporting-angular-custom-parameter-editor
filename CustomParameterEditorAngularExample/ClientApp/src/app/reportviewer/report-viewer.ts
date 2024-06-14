@@ -19,10 +19,10 @@ export class ReportViewerComponent {
         const parameter = event.args.parameter;
         const info = event.args.info;
         if (parameter.type === 'CustomParameterType') {
-                info.validationRules = info.validationRules || [];
-                info.validationRules.push(
-                    { type: 'email', message: 'Email parameter value has invalid format.' });
-                info.editor.header = "custom-parameter-text-editor";
+            info.validationRules = info.validationRules || [];
+            info.validationRules.push(
+                { type: 'email', message: 'Email parameter value has invalid format.' });
+            info.editor.header = "custom-parameter-text-editor";
         }
     }
 

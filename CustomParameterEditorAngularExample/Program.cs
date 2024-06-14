@@ -29,15 +29,13 @@ SerializationService.RegisterSerializer(CustomDataSerializer.Name, new CustomDat
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDevExpressControls();
 builder.Services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
-builder.Services
-    .AddMvc()
-    .AddNewtonsoftJson();
+builder.Services.AddMvc();
 builder.Services.ConfigureReportingServices(configurator => {
-    if(builder.Environment.IsDevelopment())
+    if (builder.Environment.IsDevelopment())
         configurator.UseDevelopmentMode();
 
     configurator.ConfigureReportDesigner(designerConfigurator => {
-                            });
+    });
     configurator.ConfigureWebDocumentViewer(viewerConfigurator => {
         viewerConfigurator.UseCachedReportSourceBuilder();
     });
@@ -49,13 +47,13 @@ builder.Services.AddSpaStaticFiles(configuration => {
 builder.Services.AddDbContext<ReportDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("ReportsDataConnectionString")));
 
 var app = builder.Build();
-using(var scope = app.Services.CreateScope()) {
+using (var scope = app.Services.CreateScope()) {
     var db = scope.ServiceProvider.GetService<ReportDbContext>();
     db.InitializeDatabase();
 }
 var contentDirectoryAllowRule = DirectoryAccessRule.Allow(new DirectoryInfo(Path.Combine(app.Environment.ContentRootPath, "..", "Content")).FullName);
 AccessSettings.ReportingSpecificResources.TrySetRules(contentDirectoryAllowRule, UrlAccessRule.Allow());
-if(app.Environment.IsDevelopment()) {
+if (app.Environment.IsDevelopment()) {
     app.UseDeveloperExceptionPage();
 } else {
     app.UseExceptionHandler("/Home/Error");
@@ -64,7 +62,7 @@ if(app.Environment.IsDevelopment()) {
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-if(!app.Environment.IsDevelopment()) {
+if (!app.Environment.IsDevelopment()) {
     app.UseSpaStaticFiles();
 }
 app.UseRouting();
@@ -84,7 +82,7 @@ app.UseSpa(spa => {
 
     spa.Options.SourcePath = "ClientApp";
 
-    if(app.Environment.IsDevelopment()) {
+    if (app.Environment.IsDevelopment()) {
         spa.UseAngularCliServer(npmScript: "start");
         spa.Options.StartupTimeout = TimeSpan.FromSeconds(240);
     }
