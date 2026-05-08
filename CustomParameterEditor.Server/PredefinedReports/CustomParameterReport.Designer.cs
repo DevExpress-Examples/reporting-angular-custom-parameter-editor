@@ -155,7 +155,7 @@
             this.DetailData3_Odd,
             this.DetailCaptionBackground3,
             this.PageInfo});
-            this.Version = "23.2";
+            this.Version = "25.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

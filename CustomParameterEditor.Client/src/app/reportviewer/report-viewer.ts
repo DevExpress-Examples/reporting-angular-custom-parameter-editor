@@ -17,9 +17,8 @@ import { CustomInput } from '../custominputcomponent/custom-input-component';
   imports: [DxReportViewerModule, DxReportDesignerModule, CustomInput]
 })
 export class ReportViewer implements AfterViewInit {
-    protected readonly reportUrl: string = "CustomParameterReport";
+    protected readonly reportUrl: string = 'CustomParameterReport';
   protected readonly invokeAction: string = '/DXXRDV';
-  protected readonly getLocalizationAction: string = `${this.invokeAction}/GetLocalization`
 
   @ViewChild('myCustomInput') myCustomInput!: TemplateRef<{ data: any }>;
 
