@@ -6,7 +6,7 @@
 <!-- default badges end -->
 # Reporting for Angular - Create a Custom Editor for a Custom Parameter Type
 
-This example creates a custom type for report parameters, implements serialization/deserialization logic, and implements a custom parameter editor. In this example, we implement a custom email parameter type with email validation using the DevExtreme `dxTextBox` component.
+This example creates a custom type for report parameters, implements serialization/deserialization logic, and implements a custom parameter editor. In this example, a custom email parameter type is implemented with email validation using the DevExtreme `dxTextBox` component.
 
 ![Reporting for Angular - Custom Parameter Editor](Images/screenshot.png)
 
