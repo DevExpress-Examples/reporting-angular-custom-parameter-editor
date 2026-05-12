@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "CustomParameterEditor.Server": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:2367;http://localhost:2368"
+    }
+  }
+}
