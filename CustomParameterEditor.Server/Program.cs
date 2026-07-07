@@ -4,14 +4,14 @@ using CustomParameterEditor.Server.Services;
 using DevExpress.AspNetCore;
 using DevExpress.AspNetCore.Reporting;
 using DevExpress.Security.Resources;
-using DevExpress.XtraReports.Native;
+using DevExpress.Utils.Serializing;
 using DevExpress.XtraReports.Web.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 
 DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(CustomParameterType));
 DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(CustomParameterType[]));
-SerializationService.RegisterSerializer(CustomDataSerializer.Name, new CustomDataSerializer());
+ObjectDataSerializer.Register(CustomDataSerializer.Name, new CustomDataSerializer());
 
 var builder = WebApplication.CreateBuilder(args);
 
