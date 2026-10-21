@@ -39,9 +39,9 @@
     "tslib": "^2.3.0",
     "run-script-os": "^1.1.0",
     "bootstrap": "^5.3.3",
-    "devexpress-reporting-angular": "25.2-stable",
-    "devextreme": "25.2-stable",
-    "devextreme-angular": "25.2-stable"
+    "devexpress-reporting-angular": "26.1-stable",
+    "devextreme": "26.1-stable",
+    "devextreme-angular": "26.1-stable"
   },
   "devDependencies": {
     "@angular/build": "^21.1.3",
